@@ -1,0 +1,59 @@
+body {
+    background-color: black;
+    display: grid;
+    place-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100vh;
+}
+
+.botao-neon {
+    text-decoration: none ;
+    color: rgb(0, 0, 77);
+    border: solid 4px currentColor;
+    font-size: 50px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background-color 100ms linear,
+    box-shadow 100ms linear;
+    position: relative;
+}
+
+.botao-neon::before {
+    content: "";
+    background-color: blue;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 95px;
+    transform: perspective(3em) rotateX(60deg)
+    scale(1, 0.7);
+    filter: blur(1em);
+    opacity: 0;
+    transition-delay: 20ms;
+    transition-duration: 100ms;
+}
+
+.botao-neon:hover {
+    color: rgb(0, 0, 226);
+    text-shadow: 0px 0px 150px blue;
+    box-shadow: 0px 0px 50px blue,
+    inset 0px 0px 20px blue;
+    background-color: rgba(0, 0, 255, 0.247);
+}
+
+.botao-neon:hover::before {
+    opacity: 0.7;
+}
+
+.botao-neon:active {
+    box-shadow: 0px 0px 80px blue,
+    inset 0px 0px 90px blue;
+    color: blue;
+}
+
+.botao-neon:active::before {
+    opacity: 1;
+}
+
+
